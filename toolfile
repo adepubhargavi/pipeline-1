@@ -1,0 +1,19 @@
+pipeline{
+	agent any
+	tools{
+	maven "Maven"
+	}
+	stages{
+		stage('code checkout'){
+			steps{
+				git branch: 'main', url: 'https://github.com/adepubhargavi/pipeline-1.git'
+			}
+		}
+		stage('code execute'){
+			steps{
+				sh 'mvn package'
+			}
+		}
+
+	}	
+}
