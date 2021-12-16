@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Code Pull') {
+            steps {
+                echo 'pulling code from git'
+            }
+        }
+        stage('code Test'){
+            steps{
+                echo 'testing the code'
+            }
+        }
+        stage('code deploy'){
+            steps{
+                echo 'deploying to nexus'
+            }
+        }
+    }
+}
